@@ -146,7 +146,9 @@ The module is designed to run scripts `only` if the test script fails with exit 
 
 ## Limitations
 
-Warning - this module is a work in progress! This was tested on:  
+Warning - this module is a work in progress!   
+
+This was tested on:  
 
 Windows Server 2012r2 Domain Controller and member server  
 Windows Server 2016v1604 Domain Controller and member server  
