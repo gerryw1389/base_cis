@@ -2,7 +2,7 @@
 
 class base_cis::base_windows::twentysixteen_template {
     if $facts['hostname'] =~ /^.*dc$/ {
-    file { 'C:/OITAdmins':
+    file { 'C:/scripts':
     ensure => directory,
     }
     file { 'C:/ProgramData/PuppetLabs/scripts':
@@ -134,7 +134,7 @@ class base_cis::base_windows::twentysixteen_template {
     include ::base_cis::base_windows::twentysixteen_dc_registry
   }
   else {
-    file { 'C:/OITAdmins':
+    file { 'C:/scripts':
     ensure => directory,
     }
     file { 'C:/ProgramData/PuppetLabs/scripts':

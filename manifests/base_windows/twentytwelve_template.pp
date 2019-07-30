@@ -125,7 +125,7 @@ class base_cis::base_windows::twentytwelve_template {
     include ::base_cis::base_windows::twentytwelve_dc_registry
   }
   else {
-    file { 'C:/OITAdmins':
+    file { 'C:/scripts':
     ensure => directory,
     }
     file { 'C:/ProgramData/PuppetLabs/scripts':
