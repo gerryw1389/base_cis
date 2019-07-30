@@ -5,7 +5,7 @@ class base_cis::base_centos::centos_template {
 
   class {'::secure_linux_cis':}
 
-  file { '/tmp/base_cis_cis_scripts':
+  file { '/tmp/base_cis_scripts':
   ensure => directory,
   owner  => 'root',
   group  => 'root',
