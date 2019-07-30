@@ -21,19 +21,18 @@ CIS Level 1 Benchmarks for WS2012r2, 2016, Centos7, RHEL7
 
 This puppet module will get you the following CIS Level `one` benchmarks:  
 
-| OS Version | Percent Passed |
-| --- | --- |  
-| 2012 Member Server | 97.43 |
-| 2012 Domain Controller | 97.34 |
-| 2016 Member Server | 98.27 |
-| 2016 Domain Controller | 97.49 |
-| Centos 7.6.1810 | 95.57 |
-| RHEL 7.6 Maipo| 96.84|
+| OS Version | Percent Passed | CIS Benchmark Version |
+| --- | --- | --- |  
+| 2012r2 Member Server | 97.43 |2.3| 
+| 2012r2 Domain Controller | 97.34 |2.3 | 
+| 2016 Member Server | 98.27 |1.1 | 
+| 2016 Domain Controller | 97.49 |1.1 | 
+| Centos 7.6.1810 | 95.57 |2.2 |
+| RHEL 7.6 Maipo| 96.84|2.2 | 
 
 As seen from above, this module will not get an environment 100% passing checks, but it is a good start! I will try to continue working on this in my free time!
 
 Screenshots can be found under files/benchmarks/proof/proof.pdf
-
 
 ## Setup
 
