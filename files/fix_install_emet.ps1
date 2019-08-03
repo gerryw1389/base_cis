@@ -31,7 +31,7 @@ If (Test-Path 'C:\ProgramData\PuppetLabs\scripts\puppet\emet.msi')
 {
     $Command = "msiexec.exe" 
     $Arguments = @("/i C:\ProgramData\PuppetLabs\scripts\puppet\emet.msi", "/quiet", "ALLUSERS=1", "/passive", "/norestart", "/log C:\ProgramData\PuppetLabs\scripts\puppet\emet_install.log")
-    Start-Process -FilePath $Command -ArgumentList $Arguments
+    Start-Process -FilePath $Command -ArgumentList $Arguments -Wait
     
     Write-Output "$date : EMET has been installed" | 
     Out-File -FilePath $log -Encoding ascii -Append
