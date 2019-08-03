@@ -29,11 +29,25 @@ Out-File -FilePath $log -Encoding ascii -Append
 If (Test-Path -Path 'C:\ProgramData\PuppetLabs\scripts\puppet\initialsecpol.txt')
 {
     # Secpol import has happened at least once so lets see if anything has changed...
+    
+    # Delete any previous exports and hashes if they exist
+    If (Test-Path 'C:\ProgramData\PuppetLabs\scripts\puppet\secpol.inf')
+    {
+        Remove-Item -Path 'C:\ProgramData\PuppetLabs\scripts\puppet\secpol.inf' -Force  
+    }
+    If (Test-Path 'C:\ProgramData\PuppetLabs\scripts\puppet\hash.txt')
+    {
+        Remove-Item -Path 'C:\ProgramData\PuppetLabs\scripts\puppet\hash.txt' -Force  
+    }
+
+    # Perform export and create a hash
     $Command = "C:\Windows\System32\secedit.exe" 
     $Arguments = @("/export", "/cfg C:\ProgramData\PuppetLabs\scripts\puppet\secpol.inf", "/quiet")
-    Start-Process -FilePath $Command -ArgumentList $Arguments
-    (Get-FileHash C:\ProgramData\PuppetLabs\scripts\puppet\secpol.inf).hash | Out-File C:\ProgramData\PuppetLabs\scripts\puppet\hash.txt
+    Start-Process -FilePath $Command -ArgumentList $Arguments -Wait
+    (Get-FileHash C:\ProgramData\PuppetLabs\scripts\puppet\secpol.inf).hash | Out-File 'C:\ProgramData\PuppetLabs\scripts\puppet\hash.txt'
     $a = Get-Content 'C:\ProgramData\PuppetLabs\scripts\puppet\hash.txt'
+    
+    # Compare against known good hash from puppet
     $b = Get-Content 'C:\ProgramData\PuppetLabs\scripts\puppet\2012client-hash.txt'
     $c = $a.compareto($b)
     # Only values are '0' for match and '-1' for not match
@@ -43,9 +57,6 @@ If (Test-Path -Path 'C:\ProgramData\PuppetLabs\scripts\puppet\initialsecpol.txt'
         Out-File -FilePath $log -Encoding ascii -Append
         Write-Output "####################" | 
         Out-File -FilePath $log -Encoding ascii -Append
-        
-        # Delete the file so that it can be checked on the next puppet run
-        Remove-Item -Path 'C:\ProgramData\PuppetLabs\scripts\puppet\hash.txt' -Force
         Exit 0
     }
     Else
@@ -54,9 +65,6 @@ If (Test-Path -Path 'C:\ProgramData\PuppetLabs\scripts\puppet\initialsecpol.txt'
         Out-File -FilePath $log -Encoding ascii -Append
         Write-Output "####################" | 
         Out-File -FilePath $log -Encoding ascii -Append
-        
-        # Delete the file so that it can be checked on the next puppet run
-        Remove-Item -Path 'C:\ProgramData\PuppetLabs\scripts\puppet\hash.txt' -Force
         Exit 1
     }
 }
