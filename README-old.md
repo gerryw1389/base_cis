@@ -1,7 +1,10 @@
 # base_cis
 <<<<<<< HEAD
+<<<<<<< HEAD
 CIS Level 1 Benchmarks for WS2012r2, 2016, Centos7, RHEL7
 =======
+=======
+>>>>>>> 6b79b61... initial push
 
 #### Table of Contents
 
@@ -178,5 +181,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+<<<<<<< HEAD
 ```
 >>>>>>> 09f1e52... initial push
+=======
+```
+>>>>>>> 6b79b61... initial push
