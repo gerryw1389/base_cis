@@ -1,10 +1,6 @@
 # base_cis
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 CIS Level 1 Benchmarks for WS2012r2, 2016, Centos7, RHEL7
-=======
-=======
->>>>>>> 6b79b61... initial push
 
 #### Table of Contents
 
@@ -158,33 +154,7 @@ RHEL 7.6 Maipo
 
 Send a pull request.
 
-## License
 
-MIT License
+### DISCLAIMER 
 
-```
-Copyright (c) 2019 Gerry Williams
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-<<<<<<< HEAD
-```
->>>>>>> 09f1e52... initial push
-=======
-```
->>>>>>> 6b79b61... initial push
+Please do not use these scripts in a production environment without reading them over first. Please see the MIT [license](./LICENSE) for more information.
